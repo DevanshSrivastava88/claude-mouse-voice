@@ -3,6 +3,7 @@
 ; XButton1 (back) = click to start Claude Code /voice, click again to stop + press Enter. Windows Terminal only.
 ;   Fakes a real held key: repeated Space DOWN (like keyboard auto-repeat), one Space UP at the end.
 ; RButton = paste clipboard. Windows Terminal only.
+; MButton (wheel click) = clear prompt (Ctrl+C). Windows Terminal only. 2s cooldown so it can't double-tap-quit Claude.
 ; XButton2 (forward) = 0-1 terminal windows -> open new Claude via desktop shortcut; 2+ -> cycle them. Global.
 
 global talking := false
@@ -12,6 +13,7 @@ LAUNCHER := A_Desktop "\Claude Code.lnk"  ; your own shortcut if you have one, e
 #HotIf WinActive("ahk_exe WindowsTerminal.exe")
 XButton1::ToggleTalk()
 RButton::Send "^v"  ; Linux-style right-click paste (Claude's TUI swallows WT's native right-click)
+MButton::ClearPrompt()
 #HotIf
 XButton2::NextClaude()  ; global: works from any app
 
@@ -44,6 +46,15 @@ SubmitPrompt() {
         Send "{Enter}"
         Log("enter")
     }
+}
+
+ClearPrompt() {
+    static last := 0
+    if A_TickCount - last < 2000  ; Ctrl+C twice on an empty box quits Claude -> swallow fast repeats
+        return
+    last := A_TickCount
+    Send "^c"
+    Log("clear")
 }
 
 NextClaude() {

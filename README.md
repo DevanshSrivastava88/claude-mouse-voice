@@ -7,6 +7,7 @@ Drive [Claude Code](https://code.claude.com)'s `/voice` dictation from your mous
 | Back thumb (`XButton1`) | Windows Terminal | Click = start dictating. Click again = stop + press Enter |
 | Forward thumb (`XButton2`) | Anywhere | 0–1 terminal windows → open a new Claude. 2+ → cycle between them |
 | Right-click | Windows Terminal | Paste (Linux-style) |
+| Middle-click | Windows Terminal | Clear the whole prompt (`Ctrl+C`). 2 s cooldown so it can't double-tap-quit Claude. Note: while Claude is working this interrupts it, same as `Ctrl+C` |
 
 Back/forward/right-click keep their normal behaviour in every other app.
 
