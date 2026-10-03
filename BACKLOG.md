@@ -1,6 +1,6 @@
 # BACKLOG
 
-- [ ] Scroll wheel sometimes drops text into the Claude prompt — probably wheel → ↑/↓ arrows recalling old prompts. Confirm what the text is before fixing.
+- [x] Scroll wheel drops text into the Claude prompt — SOLVED 2026-10-02: not the script. `"tui": "fullscreen"` in `~/.claude/settings.json` made Windows Terminal send wheel as ↑/↓ (prompt history). Removed the setting.
 - [x] Middle-click (Ctrl+C) verified live 2026-10-01 — stops answer / clears prompt.
 - [ ] Measure start gap (click -> /voice recording live) with `claude --debug`; only tune HoldSpace if the gap is ours.
 - [ ] Note in README: dropouts mid-dictation = Claude bug anthropics/claude-code #96440, not the script.
