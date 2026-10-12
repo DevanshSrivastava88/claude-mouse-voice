@@ -70,7 +70,7 @@ NextClaude() {
         Log("cycle")
     } else if A_TickCount - lastLaunch > 10000 {  ; 0-1 windows -> open a new one; debounce so spam can't stack empties
         lastLaunch := A_TickCount
-        Run(FileExist(LAUNCHER) ? LAUNCHER : "wt.exe claude")
+        Run(FileExist(LAUNCHER) ? LAUNCHER : "wt.exe claude --chrome")
         Log("launch")
     }
 }
