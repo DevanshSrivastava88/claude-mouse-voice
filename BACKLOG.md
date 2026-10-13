@@ -1,6 +1,8 @@
 # BACKLOG
 
 - [x] Scroll wheel drops text into the Claude prompt — SOLVED 2026-10-02: not the script. `"tui": "fullscreen"` in `~/.claude/settings.json` made Windows Terminal send wheel as ↑/↓ (prompt history). Removed the setting.
+- [ ] Wheel scroll "glitching" in normal (non-fullscreen) mode, reported 2026-10-12. Not the script. Ask devansh: idle vs while spinner runs? jump/flicker/slow? Then fix WT or Claude side.
+- [x] Launcher runs `claude --chrome` (shortcut + fallback) — 2026-10-12
 - [x] Middle-click (Ctrl+C) verified live 2026-10-01 — stops answer / clears prompt.
 - [ ] Measure start gap (click -> /voice recording live) with `claude --debug`; only tune HoldSpace if the gap is ours.
 - [ ] Note in README: dropouts mid-dictation = Claude bug anthropics/claude-code #96440, not the script.
