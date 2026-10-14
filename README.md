@@ -31,6 +31,6 @@ Not sure which number your side buttons send? Click them on <https://unixpapa.co
 - Windows Terminal only (`ahk_exe WindowsTerminal.exe`). Edit the `#HotIf` lines for another terminal.
 - If focus leaves the terminal mid-dictation, Space is released automatically — it never sprays spaces into other apps.
 - Enter fires the moment you click to stop. If your last word gets clipped, add a short `Sleep 200` before `SubmitPrompt()`.
-- Forward-button launch uses `Claude Code.lnk` on your Desktop if present, otherwise `wt.exe claude`. Launches are debounced 10 s so spam-clicking can't stack empty windows.
+- Forward-button launch uses `Claude Code.lnk` on your Desktop if present, otherwise `wt.exe claude --chrome`. Launches are debounced 10 s so spam-clicking can't stack empty windows.
 - Every click is logged to `claude-mouse-voice.log` next to the script.
 - Don't launch the script from inside a Claude Code tool shell — it dies with the session. Double-click it or use `explorer.exe claude-mouse-voice.ahk`.
