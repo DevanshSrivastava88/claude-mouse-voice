@@ -11,3 +11,6 @@
 
 - [ ] 2026-10-13: back thumb typed spaces = Claude voice got switched OFF in ~/.claude/settings.json (voice.enabled + voiceEnabled false). Flipped on. If it recurs, find what flips it (likely `/voice` toggle persists off).
 - [ ] Optional: script checks settings.json voice flag on start, beeps if off
+
+- [x] **AHK watchdog** — script died silently 10-23 08:39; watchdog.pyw via Task Scheduler every 5 min relaunches it (🤖)
+- [ ] **Why AHK dies** — check log.txt last lines next time it drops; no Windows crash event logged 10-23 (🤖)
