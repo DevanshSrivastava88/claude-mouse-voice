@@ -8,7 +8,7 @@
 
 global talking := false
 LOGFILE := A_ScriptDir "\claude-mouse-voice.log"
-LAUNCHER := A_Desktop "\Claude Code.lnk"  ; your own shortcut if you have one, else falls back to `wt claude`
+LAUNCHER := A_Desktop "\c.lnk"  ; your own shortcut if you have one, else falls back to `wt cmd /k claude`
 
 #HotIf WinActive("ahk_exe WindowsTerminal.exe")
 XButton1::ToggleTalk()
@@ -70,7 +70,7 @@ NextClaude() {
         Log("cycle")
     } else if A_TickCount - lastLaunch > 10000 {  ; 0-1 windows -> open a new one; debounce so spam can't stack empties
         lastLaunch := A_TickCount
-        Run(FileExist(LAUNCHER) ? LAUNCHER : "wt.exe claude --chrome")
+        Run(FileExist(LAUNCHER) ? LAUNCHER : "wt.exe cmd /k claude --chrome")  ; cmd needed: npm claude is a .cmd shim, wt can't launch it bare
         Log("launch")
     }
 }
