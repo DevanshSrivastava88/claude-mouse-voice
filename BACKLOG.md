@@ -14,3 +14,5 @@
 
 - [x] **AHK watchdog** — script died silently 10-23 08:39; watchdog.pyw via Task Scheduler every 5 min relaunches it (🤖)
 - [ ] **Why AHK dies** — check log.txt last lines next time it drops; no Windows crash event logged 10-23 (🤖)
+
+- [ ] **Forward-button launch** — click forward btn w/ 0-1 terminals, confirm Claude opens (fixed 10-25: c.lnk + cmd /k fallback) (🧍)
